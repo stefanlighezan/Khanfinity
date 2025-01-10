@@ -1,0 +1,157 @@
+body {
+  color: #FFF;
+  height: 100vh;
+  margin: auto;
+  text-align: center;
+  user-select: none;
+}
+a {
+  color: #d89f52;
+}
+pre {
+  text-align: left;
+  border: rgb(48, 57, 92) 1px solid;
+  padding: 13px 33px;
+}
+hr {
+  border: #d89f52 1px solid;
+}
+
+.container {
+  text-align: left;
+  width: 57%;
+  margin: 7% auto 0;
+  color:rgb(48, 57, 92);
+}
+
+#calendarThis {
+  margin: 3% auto;
+  display: inline-block;
+  transition: box-shadow 0.25s;
+  border-radius: 2px;
+  padding: 9px 7px 9px 7px;
+  background: #fffcf9;
+  color: rgb(48, 57, 92);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+#falling-clocks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.clock {
+  position: absolute;
+  top: -10%;
+  width: 100px;
+  height: 100px;
+  background: url('clock.png') no-repeat center center / contain;
+  animation: fall 15s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10%) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(900%) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+#calendarThis li,
+.day-of-week {
+  display: inline-block;
+  padding: 13px 7px;
+  width: 33px;
+  border: #fff9f2 1px solid;
+  text-align: center;
+  color: #FFF;
+  background: rgb(48, 57, 92);
+  cursor: pointer;
+}
+#calendarThis li:hover {
+  background: #fff;
+}
+.float-left,
+.day-view {
+  float: left;
+}
+.float-right,
+.month-view {
+  float: right;
+}
+.month-view ul {
+  padding: 0;
+  margin: 0 0 0 8px;
+  text-align: left;
+}
+
+.day-view {
+  text-decoration: underline;
+  text-align: center;
+  font-weight: bold;
+}
+.day-header {
+  padding: 13px 0;
+  border: rgb(48, 57, 92) 2px solid;
+  background: #fff;
+}
+.day-number {
+  display: block;
+  margin: 10% auto;
+  font-size: 144px;
+  background: #fff;
+  width: 83%;
+  border-radius: 2px;
+  border: #ffe2bb 1px dotted;
+  position: relative;
+  top: 64%;
+  transform: translateY(12%);
+}
+
+.day-view,
+.month-view {
+  width: 357px;
+  display: block;
+}
+.day-of-week {
+  background: #fffcf9 !important;
+  font-weight: bold;
+  border: #fff 1px solid;
+  color: #d89f52;
+}
+
+.month-header {
+  width: 99%;
+  display: block;
+  text-align: center;
+  padding: 13px 0;
+  border: rgb(48, 57, 92) 2px solid;
+  background: #fff;
+  margin: 0 0 2px 0;
+  font-weight: bold;
+}
+.today {
+  background: #d08e2b !important;
+}
+.arrow {
+  width: 45px;
+  height: 35px;
+  margin: auto 0 auto 0;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  #calendarThis {
+    width: 358px;
+  }
+}
